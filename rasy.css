@@ -1,0 +1,99 @@
+/* --- ZÁKLADNÍ STRUKTURA SEKCE --- */
+
+#rasy {
+    width: 100%;
+    /* Odstraněna pevná výška pro plynulé střídání sekcí a automatické přizpůsobení obsahu */
+}
+
+/* Podpůrné kontejnery pro centrování obsahu uvnitř celoplošných sekcí */
+.gallery-section-container,
+.pricelist-section-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* --- ZAROVNÁNÍ PROFILU (TEXT VLEVO) --- */
+
+.left-align {
+    text-align: left;
+    width: 100%;
+}
+
+.left-align-cara {
+    margin: 20px 0 40px 0 !important; /* Zarovná dekorativní čáru k levému okraji v profilu */
+}
+
+
+/* --- CENÍK --- */
+
+.cenik-kontejner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Zajišťuje skládání ceníků pod sebe na menších displejích */
+    gap: 40px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.cenik-figure.figureAneta {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 700px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Jemný stín pro prémiový vzhled */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cenik-image.imageAneta {
+    width: 100%;
+    height: auto;
+    max-height: 700px;
+    object-fit: contain; /* Zabrání deformaci obrázku ceníku */
+    min-height: 700px;
+    transition: all 400ms ease;
+}
+
+.margik{
+    margin-bottom: 20px;
+}
+.cenik-image.imageAneta:hover{
+    transform: scale(1.1);
+}
+/* --- RESPONSIVITA PRO CENÍK --- */
+
+@media (max-width: 768px) {
+    .cenik-kontejner {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .left-align {
+        text-align: center;
+    }
+    
+    .left-align-cara {
+        margin: 20px auto 40px auto !important; /* Na mobilech vycentruje čáru zpět na střed */
+    }
+    
+
+}
+
+@media (max-width:450px){
+    .cenik-image.imageAneta {
+        height: 400px;
+    }
+    .cenik-figure.figureAneta {
+        height: 400px;
+    }
+}

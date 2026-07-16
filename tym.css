@@ -1,0 +1,259 @@
+/* --- ÚPRAVA PRO SEKCE NA CELOU ŠÍŘKU --- */
+
+.tymos {
+    width: 100%;
+    /* Odstraněna pevná výška a pozadí pro plynulé střídání sekcí */
+}
+
+/* Hlavní obal sekce přes celou šířku obrazovky */
+.full-width-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0; /* Elegantní vertikální rozestupy */
+    box-sizing: border-box;
+}
+
+/* Elegantní krémové pozadí pro světlé sekce */
+.bg-light {
+    background-color: #faf6f0; 
+    color: #1a1a1a;
+}
+
+/* Luxusní tmavé pozadí pro tmavé sekce */
+.bg-dark {
+    background-color: #111111; 
+    color: #ffffff;
+}
+
+
+/* --- VNITŘNÍ KONTEJNERY OBSAHU --- */
+
+/* Kontejner pro společné foto (světlá sekce) */
+.onas-tym-container-main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Kontejner pro vizitky (tmavá sekce) */
+.onas-tym-container-cards {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* --- SPOLEČNÉ PRVKY A HISTORIE --- */
+
+/* 1. SEKCE: První kontejner */
+.prvni-kontejner {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 3. SEKCE: Kontejner s vizitkami týmu */
+.kontejner {
+    width: 100%;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.vsichni {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.vsichni-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 400ms ease;
+    cursor: pointer;
+}
+
+.vsichni-image:hover {
+    transform: scale(1.1);
+}
+
+.onas-tym-nadpis {
+    font-size: 30px;
+    color: inherit; /* Přizpůsobí se barvě sekce */
+}
+
+/* Styl pro čáru pod nadpisem v týmu */
+.cara {
+    width: 80px;
+    height: 3px;
+    background-color: #e0115f; /* Moderní kontrastní růžová */
+    
+}
+
+
+/* --- VIZITKY ČLENŮ TÝMU (HOVER EFEKTY) --- */
+
+.onas-tym-figure {
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 400ms ease;
+    background-color: #1a1a1a; /* Podklad pro plynulý přechod */
+}
+
+/* Tmavý překryv, který vyjede zdola */
+.onas-tym-figure::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Elegantní poloprůhledná černá */
+    transform: translateY(100%);
+    transition: all 400ms ease;
+    z-index: 1;
+}
+
+.onas-tym-figure:hover::before {
+    transform: translateY(0);
+}
+
+.onas-tym-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 400ms ease;
+}
+
+/* Textový blok na vizitce */
+.onas-tym-blok {
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    transform: translateY(140%); /* Skryto pod vizitkou */
+    transition: all 400ms ease;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.onas-tym-h3 {
+    color: white;
+    font-size: 26px;
+    margin: 0;
+}
+
+.onas-tym-span {
+    color: #cccccc; /* Světlejší šedá pro čitelnost na hover pozadí */
+    font-style: italic;
+    font-size: 16px;
+}
+
+/* Aktivace hover stavu */
+.onas-tym-figure:hover .onas-tym-blok {
+    transform: translateY(0);
+}
+
+.onas-tym-figure:hover .onas-tym-image {
+    transform: scale(1.1);
+    filter: blur(2px);
+}
+
+.onas-tym-figure:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid #e0115f; /* Rubínově růžové ohraničení */
+}
+
+
+/* --- SOCIÁLNÍ SÍTĚ NA VIZITKÁCH --- */
+
+.socialni-site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.telefoni-cislo-div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.telefoni-cislo-div i {
+    color: #e0115f;
+}
+
+.telefoni-cislo {
+    color: #ffffff;
+}
+
+.insta {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.efekt {
+    transition: all 400ms ease;
+    display: inline-block;
+}
+
+.efekt:hover {
+    transform: scale(1.2);
+    color: #e0115f; /* Moderní rubínově růžová */
+    cursor: pointer;
+}
+
+
+/* --- RESPONSIVITA --- */
+
+@media (max-width: 768px) {
+    .full-width-section {
+        padding: 50px 20px;
+    }
+    
+    .vsichni {
+        max-width: 500px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 450px) {
+    .vsichni {
+        max-width: 300px;
+        height: 300px;
+    }
+}

@@ -1,0 +1,271 @@
+/* --- ÚPRAVA PRO SEKCE NA CELOU ŠÍŘKU --- */
+
+#nanotape {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* Odstraněn flex a obří min-height, aby sekce správně vyplnily prostor */
+}
+
+/* Hlavní obal sekce přes celou šířku obrazovky */
+.full-width-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0; /* Přidáno vertikální odsazení, aby obsah nedoléhal k okrajům pozadí */
+}
+
+/* Střídající se barvy pozadí */
+.bg-light {
+    background-color: #fcfcfc; /* Velmi světlá/krémová (uprav si odstín podle designu salonu) */
+    color: #1a1a1a;
+}
+
+.bg-dark {
+    background-color: #111111; /* Kontrastní tmavá barva */
+    color: #ffffff;
+}
+
+/* Zajištění, aby světlé a tmavé sekce správně stylovaly své texty */
+.bg-dark .vlasy-h3, 
+.bg-dark .vlasy-span, 
+.bg-dark .vlasy-para, 
+.bg-dark .nano-para, 
+.bg-dark .radkosek p {
+    color: #ffffff;
+}
+
+.bg-light .vlasy-h3, 
+.bg-light .vlasy-span, 
+.bg-light .vlasy-para, 
+.bg-light .nano-para, 
+.bg-light .radkosek p {
+    color: #1a1a1a;
+}
+
+
+/* --- PŮVODNÍ STYLY (ZACHOVÁNY A OPTIMALIZOVÁNY) --- */
+
+.vlasy-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex; /* Přidáno pro správné řazení textu a obrázku vedle sebe */
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.nanotape-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 1200px;
+}
+
+.spanvlasy {
+    font-size: 20px;
+    margin-bottom: 30px;
+    display: inline-block; /* Aby správně fungoval margin-bottom */
+}
+
+.texticek {
+    height: auto; /* Změněno z 700px na auto pro lepší flexibilitu */
+}
+
+.radkosek {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.razeni {
+    margin-bottom: 20px;
+}
+
+.nano-para {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.razeni:first-of-type {
+    margin-top: 20px;
+}
+
+.nanospan {
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.figurevelke {
+    height: 300px;
+    max-width: 300px;
+    border-radius: 50%;
+}
+
+.nano-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.nano-prvni {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    max-width: 700px;
+}
+
+.last-image {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.pred-figure {
+    width: 100%;
+    max-width: 300px;
+    min-width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.pred-image {
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease;
+}
+
+.pred-image:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.kontejnercolumn {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centeros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 700px;
+}
+
+.figurina {
+    max-width: 500px;
+    height: 500px;
+    transition: all 400ms ease;
+}
+
+.radkosek p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.vlasy-image {
+    transition: all 400ms ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.margintop{
+    margin-top: 20px;
+}
+.vlasy-image:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.sebou {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 50px;
+}
+
+
+/* --- RESPONSIVITA (MÉDIA) --- */
+
+@media (max-width: 768px) {
+    .full-width-section {
+        padding: 40px 20px; /* Menší padding pro mobily a tablety */
+    }
+
+    .vlasy-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .reverse {
+        flex-direction: column; /* Na mobilech bude obrázek vždy nahoře */
+    }
+
+    .figurina {
+        max-width: 300px;
+        height: 300px;
+    }
+
+    .vlasy-text {
+        text-align: center;
+    }
+
+    .sebou {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .nano-prvni {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .razeni {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+   
+
+    .separator {
+        display: none;
+    }
+
+    .spanvlasy {
+        font-size: 16px;
+    }
+
+    .ahoj {
+        gap: 40px; /* Sníženo pro mobilní zařízení, aby tam nebyla obří mezera */
+    }
+    .vlasy-h3{
+        font-size: 26px;
+    }
+    .nano-para{
+        font-size:14px;
+    }
+    .small{
+        font-size: 14px;
+    }
+}

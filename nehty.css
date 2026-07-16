@@ -1,0 +1,276 @@
+
+
+/* ==========================================================================
+   1. SYSTÉM CELOPLOŠNÝCH SEKCÍ (BACKGROUNDS)
+   ========================================================================== */
+
+#nehty {
+    width: 100%;
+    /* Odstraněn flexbox a pevná výška pro správné roztáhnutí pozadí sekcí */
+}
+
+/* Celoplošný obal sekce (roztáhne pozadí na 100 % šířky) */
+.full-width-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Střídající se barvy pozadí */
+.bg-light {
+    background-color: #ffffff; /* Elegantní krémové pozadí salonu */
+    color: #1a1a1a;
+}
+
+.bg-white {
+    background-color: black; /* Čistě bílé pozadí pro kontrast */
+    color: #1a1a1a;
+}
+
+/* Vnitřní kontejner, který drží obsah vycentrovaný uprostřed obrazovky */
+.section-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 80px 20px; /* Elegantní mezery shora i zdola */
+    box-sizing: border-box;
+}
+.stredik{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:40px;
+}
+
+/* ==========================================================================
+   2. PROFIL (TEREZA MONSPORT)
+   ========================================================================== */
+
+.vlasy-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    box-sizing: border-box;
+}
+
+.vlasy-figure {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 50%; /* Dokonalý kruh */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.vlasy-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 350ms ease;
+}
+
+.vlasy-image:hover {
+    transform: scale(1.1);
+}
+
+.vlasy-text {
+    width: 100%;
+    max-width: 600px;
+}
+
+.vlasy-h3 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.vlasy-span {
+    font-size: 22px;
+    color: #555555;
+    font-style: italic;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.vlasy-para {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Kontakty a sociální sítě v profilu */
+.socialni-site2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.telefoni-cislo-div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+}
+
+.telefoni-cislo-div i {
+    font-size: 20px;
+    color: #e0115f; /* Elegantní rubínová růžová */
+}
+
+.telefoni-cislo {
+    color: #1a1a1a;
+}
+
+.instagram2 {
+    color: #1a1a1a;
+    font-size: 20px;
+    transition: all 400ms ease;
+    display: inline-block;
+}
+
+.instagram2:hover {
+    transform: scale(1.1);
+    color: #e0115f;
+}
+
+
+/* ==========================================================================
+   3. UKÁZKY PRÁCE (GALERIE FOTEK)
+   ========================================================================== */
+
+.nadpis-vlasy {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+/* Dekorativní čára pod nadpisy */
+.cara {
+    width: 80px;
+    height: 3px;
+    background-color: #e0115f; /* Rubínová růžová */
+    
+}
+
+.kontejner-vlasy {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.fotky-figure {
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.fotky-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 400ms ease;
+}
+
+.fotky-image:hover {
+    transform: scale(0.85) rotate(-10deg); /* Tvůj původní hravý efekt */
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   4. CENÍK
+   ========================================================================== */
+
+.cenik-figure {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cenik-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 400ms ease;
+}
+
+.cenik-image:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   5. RESPONSIVITA (MENŠÍ DISPLEJE)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .vlasy-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .vlasy-figure {
+        max-width: 350px;
+        height: 350px;
+    }
+
+    .socialni-site2 {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-container {
+        padding: 50px 20px; /* Menší mezery pro mobily */
+    }
+
+    .vlasy-h3 {
+        font-size: 28px;
+    }
+
+    .vlasy-span {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .vlasy-para {
+        font-size: 16px;
+    }
+
+    .fotky-figure {
+        max-width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 450px) {
+    .vlasy-figure {
+        max-width: 260px;
+        height: 260px;
+    }
+
+    .vlasy-para {
+        font-size: 15px;
+    }
+
+    .cenik-figure {
+        max-width: 95%; /* Aby ceník na malých mobilech nešel mimo displej */
+    }
+}
